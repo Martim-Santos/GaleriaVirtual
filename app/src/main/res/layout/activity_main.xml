@@ -21,7 +21,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:icon="@android:drawable/btn_star_big_on"/>
+            android:icon="@android:drawable/ic_menu_camera"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"

@@ -10,6 +10,7 @@ import com.google.android.material.tabs.TabLayout
 import pt.ipt.dam.trabalho_final_dam.MyViewPagerAdapter
 
 class MainActivity : AppCompatActivity() {
+
     lateinit var tabLayout: TabLayout
     lateinit var viewPager2: ViewPager2
     lateinit var myViewPagerAdapter: MyViewPagerAdapter
