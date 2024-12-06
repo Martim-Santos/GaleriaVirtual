@@ -1,9 +1,11 @@
-package pt.ipt.dam.fragmentos
+package pt.ipt.dam.trabalho_final_dam
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+
 import pt.ipt.dam.trabalho_final_dam.fragmentos.Fragmento1
+
 import pt.ipt.dam.trabalho_final_dam.fragmentos.fragmento2
 import pt.ipt.dam.trabalho_final_dam.fragmentos.fragmento3
 

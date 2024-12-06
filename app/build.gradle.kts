@@ -43,6 +43,7 @@ android {
 
 dependencies {
 
+
     // CameraX core library using the camera2 implementation
     // val cameraxVersion = "1.3.3"
     // The following line is optional, as the core library is included indirectly by camera-camera2
@@ -59,6 +60,9 @@ dependencies {
     // If you want to additionally use the CameraX Extensions library
     implementation(libs.androidx.camera.extensions)
 
+    implementation ("com.squareup.retrofit2:retrofit:2.3.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.3.0")
+    
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
