@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "pt.ipt.dam.trabalho_final_dam"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "pt.ipt.dam.trabalho_final_dam"
@@ -44,7 +44,7 @@ android {
 dependencies {
 
     // CameraX core library using the camera2 implementation
-    val cameraxVersion = "1.3.3"
+    // val cameraxVersion = "1.3.3"
     // The following line is optional, as the core library is included indirectly by camera-camera2
     implementation(libs.androidx.camera.core)
     implementation(libs.androidx.camera.camera2)
