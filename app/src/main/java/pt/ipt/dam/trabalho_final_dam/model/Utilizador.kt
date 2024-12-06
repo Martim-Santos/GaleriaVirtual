@@ -6,5 +6,4 @@ data class Utilizador (
     @SerializedName("email") val Email: String?,
     @SerializedName("password") val Password: String?,
     @SerializedName("nome") val Nome: String?
-//    @SerializedName("id") val id: Int
 )

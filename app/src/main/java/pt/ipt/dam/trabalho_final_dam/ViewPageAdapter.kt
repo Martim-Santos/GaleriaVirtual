@@ -3,13 +3,11 @@ package pt.ipt.dam.trabalho_final_dam
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-
-import pt.ipt.dam.trabalho_final_dam.fragmentos.Fragmento1
-
+import pt.ipt.dam.trabalho_final_dam.fragmentos.fragmento1
 import pt.ipt.dam.trabalho_final_dam.fragmentos.fragmento2
 import pt.ipt.dam.trabalho_final_dam.fragmentos.fragmento3
 
-class MyViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
+class ViewPageAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
 
     override fun getItemCount(): Int {
@@ -18,10 +16,10 @@ class MyViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdap
 
     override fun createFragment(position: Int): Fragment {
         when(position) {
-            0 -> return Fragmento1()
+            0 -> return fragmento1()
             1 -> return fragmento2()
             2 -> return fragmento3()
-            else -> return Fragmento1()
+            else -> return fragmento1()
         }
     }
 }
