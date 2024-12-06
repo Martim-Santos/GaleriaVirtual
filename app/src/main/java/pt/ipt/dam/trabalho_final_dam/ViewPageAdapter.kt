@@ -1,11 +1,11 @@
-package pt.ipt.dam.fragmentos
+package pt.ipt.dam.trabalho_final_dam
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import pt.ipt.dam.fragmentos.fragmento.fragmento1
-import pt.ipt.dam.fragmentos.fragmento.fragmento2
-import pt.ipt.dam.fragmentos.fragmento.fragmento3
+import pt.ipt.dam.trabalho_final_dam.fragmentos.fragmento1
+import pt.ipt.dam.trabalho_final_dam.fragmentos.fragmento2
+import pt.ipt.dam.trabalho_final_dam.fragmentos.fragmento3
 
 class MyViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 

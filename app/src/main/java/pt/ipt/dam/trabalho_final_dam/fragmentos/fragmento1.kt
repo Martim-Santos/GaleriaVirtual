@@ -1,4 +1,4 @@
-package pt.ipt.dam.fragmentos.fragmento
+package pt.ipt.dam.trabalho_final_dam.fragmentos
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "pt.ipt.dam.trabalho_final_dam"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "pt.ipt.dam.trabalho_final_dam"
@@ -36,7 +36,8 @@ android {
 }
 
 dependencies {
-
+    implementation ("com.squareup.retrofit2:retrofit:2.3.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.3.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
