@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Trabalho_Final_DAM</string>
+    <string name="camara_click">tirar foto</string>
 </resources>
