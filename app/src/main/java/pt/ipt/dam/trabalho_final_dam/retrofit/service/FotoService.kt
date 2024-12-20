@@ -25,4 +25,5 @@ interface FotoService {
 
     @PATCH("https://api.sheety.co/44999724e36c8f60a4a0444b7f325fbd/projetoFinalDam/fotos/{id}")
     fun editFoto(@Field("Descricao") Descricao: String?): Call<Foto>
+
 }

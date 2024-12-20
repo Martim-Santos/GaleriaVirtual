@@ -3,6 +3,9 @@ package pt.ipt.dam.trabalho_final_dam.fragmentos
 import android.Manifest
 import android.content.ContentValues
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
@@ -19,6 +22,15 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import pt.ipt.dam.trabalho_final_dam.databinding.Fragmento1Binding
+<<<<<<< Updated upstream
+=======
+import pt.ipt.dam.trabalho_final_dam.base64.Base64
+import pt.ipt.dam.trabalho_final_dam.model.Foto
+import pt.ipt.dam.trabalho_final_dam.retrofit.RetrofitInitializer
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+>>>>>>> Stashed changes
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.concurrent.ExecutorService
@@ -31,6 +43,8 @@ class fragmento1 : Fragment() {
 
     private lateinit var cameraExecutor: ExecutorService
     private var imageCapture: ImageCapture? = null
+
+    private lateinit var base64: Base64
 
     companion object {
         private const val TAG = "CameraXFragment"
@@ -103,7 +117,7 @@ class fragmento1 : Fragment() {
         }, ContextCompat.getMainExecutor(requireContext()))
     }
 
-    private fun takePhoto() {
+    /*private fun takePhoto() {
         val imageCapture = imageCapture ?: return
 
         val name = SimpleDateFormat(FILENAME_FORMAT, Locale.UK)
@@ -129,6 +143,7 @@ class fragmento1 : Fragment() {
                     Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
                 }
 
+<<<<<<< Updated upstream
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
                     val msg = "Photo capture succeeded: ${output.savedUri}"
                     Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
@@ -137,6 +152,91 @@ class fragmento1 : Fragment() {
             })
     }
 
+=======
+            override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+                val msg = "Photo capture succeeded: ${output.savedUri}"
+                Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+                Log.d(TAG, msg)
+            }
+        })
+    } */
+
+private fun takePhoto() {
+   val imageCapture = imageCapture ?: return
+
+    val name = SimpleDateFormat(FILENAME_FORMAT, Locale.UK)
+        .format(System.currentTimeMillis())
+    val contentValues = ContentValues().apply {
+        put(MediaStore.MediaColumns.DISPLAY_NAME, name)
+        put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+    }
+
+    val outputOptions = ImageCapture.OutputFileOptions
+        .Builder(
+            requireContext().contentResolver,
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+            contentValues
+        ).build()
+
+    imageCapture.takePicture(outputOptions, ContextCompat.getMainExecutor(requireContext()),
+        object : ImageCapture.OnImageSavedCallback {
+            override fun onError(exc: ImageCaptureException) {
+                Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
+            }
+
+            override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+                val uri = output.savedUri
+                if (uri != null) {
+                    processImage(uri) // Process the image for API upload
+                } else {
+                   Toast.makeText(requireContext(), "Photo capture failed.", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
+}
+
+private fun processImage(uri: Uri) {
+    try {
+        // Load the image as a Bitmap
+        val inputStream = requireContext().contentResolver.openInputStream(uri)
+        val bitmap = BitmapFactory.decodeStream(inputStream)
+
+        // Convert Bitmap to Base64
+        val base64String = base64.convertBitmapToBase64(bitmap)
+
+        // Send Base64 string to API
+        sendImageToApi(base64String)
+
+    } catch (e: Exception) {
+        Log.e(TAG, "Error processing image", e)
+    }
+}
+
+    private fun convertBitmapToBase64(bitmap: Bitmap?): String {
+        TODO("Not yet implemented")
+    }
+
+    private fun sendImageToApi(base64String: String) {
+    val apiService = RetrofitInitializer().fotoService() // Adjust this to your API service class
+
+    val call = apiService.addFoto("email", base64String, FILENAME_FORMAT) // Define this endpoint in your Retrofit service
+    call.enqueue(object : Callback<Foto> {
+        override fun onResponse(call: Call<Foto>, response: Response<Foto>) {
+            if (response.isSuccessful) {
+                Toast.makeText(requireContext(), "Imagem salvada com sucesso.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(requireContext(), "Upload failed: ${response.message()}", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        override fun onFailure(call: Call<Foto>, t: Throwable) {
+            Log.e(TAG, "Upload failed: ${t.message}", t)
+        }
+
+    })
+}
+
+>>>>>>> Stashed changes
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

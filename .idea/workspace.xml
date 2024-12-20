@@ -31,6 +31,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Utilizador.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/RetrofitInitializer.kt" afterDir="false" />
@@ -43,6 +44,16 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento3.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+=======
+    <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="base64">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/base64/Base64.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/FotoService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/FotoService.kt" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,10 +110,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< Updated upstream
+=======
+        <option value="Class" />
+        <option value="Kotlin Data Class" />
+>>>>>>> Stashed changes
         <option value="layoutResourceFile" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
+<<<<<<< Updated upstream
         <option value="Class" />
+=======
+        <option value="Kotlin Interface" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -234,5 +254,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="base64" />
+    <option name="LAST_COMMIT_MESSAGE" value="base64" />
   </component>
 </project>
