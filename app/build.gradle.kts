@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "pt.ipt.dam.trabalho_final_dam"
+    namespace = "pt.ipt.dam.galeria_virtual"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "pt.ipt.dam.trabalho_final_dam"
+        applicationId = "pt.ipt.dam.galeria_virtual"
         minSdk = 25
         targetSdk = 34
         versionCode = 1
