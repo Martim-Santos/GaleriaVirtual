@@ -69,9 +69,9 @@ class fragmento2 : Fragment() {
         })
     }
 
-    private fun configureList(notes: List<Foto>) {
+    private fun configureList(fotos: List<Foto>) {
         val recyclerView: RecyclerView = findViewById(R.id.foto_list_recyclerview)
-        recyclerView.adapter = NoteListAdapter(notes, this)
+        recyclerView.adapter = FotoListAdapter(fotos, this)
         val layoutManager = StaggeredGridLayoutManager( 2, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.layoutManager = layoutManager
     }

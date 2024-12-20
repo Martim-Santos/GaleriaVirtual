@@ -22,15 +22,12 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import pt.ipt.dam.trabalho_final_dam.databinding.Fragmento1Binding
-<<<<<<< Updated upstream
-=======
 import pt.ipt.dam.trabalho_final_dam.base64.Base64
 import pt.ipt.dam.trabalho_final_dam.model.Foto
 import pt.ipt.dam.trabalho_final_dam.retrofit.RetrofitInitializer
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
->>>>>>> Stashed changes
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.concurrent.ExecutorService
@@ -236,7 +233,6 @@ private fun processImage(uri: Uri) {
     })
 }
 
->>>>>>> Stashed changes
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
