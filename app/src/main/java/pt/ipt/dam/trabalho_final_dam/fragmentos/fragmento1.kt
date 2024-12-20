@@ -24,7 +24,7 @@ import java.util.Locale
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
-class Fragmento1 : Fragment() {
+class fragmento1 : Fragment() {
 
     private var _binding: Fragmento1Binding? = null
     private val binding get() = _binding!!
@@ -35,7 +35,15 @@ class Fragmento1 : Fragment() {
     companion object {
         private const val TAG = "CameraXFragment"
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
-        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+        private val REQUIRED_PERMISSIONS = mutableListOf(
+            // import android.Manifest
+            Manifest.permission.CAMERA
+        ).apply {
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
+                add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            }
+        }.toTypedArray()
+
     }
 
     override fun onCreateView(
@@ -55,7 +63,7 @@ class Fragmento1 : Fragment() {
         } else {
             requestPermissions(REQUIRED_PERMISSIONS, 101)
         }
-
+        // tratar do evento 'click' do botão
         binding.imageCaptureButton.setOnClickListener {
             takePhoto()
         }
