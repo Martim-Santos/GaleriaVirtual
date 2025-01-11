@@ -41,42 +41,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-
-
-    <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Utilizador.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/RetrofitInitializer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorSerivce.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/ViewPageAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/ViewPageAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento2.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento3.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-
-    <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="base64">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/base64/Base64.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+    <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="deploymentTargetSelector">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/FotoService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/FotoService.kt" afterDir="false" />
-
-
-    <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="página de login e register">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/APIresult.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Logins.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Login.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Register.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Register.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Utilizador.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Utilizador.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/RetrofitInitializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/RetrofitInitializer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorService.kt" afterDir="false" />
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,22 +99,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-
-
         <option value="Class" />
         <option value="Kotlin Data Class" />
-
         <option value="layoutResourceFile" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
-
         <option value="Kotlin Interface" />
-
         <option value="Kotlin Interface" />
         <option value="layoutResourceFile" />
         <option value="Class" />
         <option value="Kotlin Class" />
-
       </list>
     </option>
   </component>
@@ -314,9 +274,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-
     <MESSAGE value="base64" />
-    <option name="LAST_COMMIT_MESSAGE" value="base64" />
-
+    <MESSAGE value="deploymentTargetSelector" />
+    <option name="LAST_COMMIT_MESSAGE" value="deploymentTargetSelector" />
   </component>
 </project>
