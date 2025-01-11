@@ -60,8 +60,8 @@ dependencies {
     // If you want to additionally use the CameraX Extensions library
     implementation(libs.androidx.camera.extensions)
 
-    implementation ("com.squareup.retrofit2:retrofit:2.3.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.3.0")
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
     
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -69,6 +69,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
