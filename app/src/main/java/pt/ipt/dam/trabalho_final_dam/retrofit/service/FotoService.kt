@@ -1,7 +1,7 @@
-package pt.ipt.dam.galeria_virtual.retrofit.service
+package pt.ipt.dam.trabalho_final_dam.retrofit.service
 
 import retrofit2.Call
-import pt.ipt.dam.galeria_virtual.model.Foto
+import pt.ipt.dam.trabalho_final_dam.model.Foto
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.Field

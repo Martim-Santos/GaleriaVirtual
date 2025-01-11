@@ -1,4 +1,4 @@
-package pt.ipt.dam.galeria_virtual
+package pt.ipt.dam.trabalho_final_dam
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import pt.ipt.dam.galeria_virtual.model.Foto
+import pt.ipt.dam.trabalho_final_dam.model.Foto
 
 class FotoListAdapter(private val fotos: List<Foto>, private val context: Context) :
     RecyclerView.Adapter<FotoListAdapter.ViewHolder>() {

@@ -1,4 +1,4 @@
-package pt.ipt.dam.galeria_virtual
+package pt.ipt.dam.trabalho_final_dam
 
 import org.junit.Test
 

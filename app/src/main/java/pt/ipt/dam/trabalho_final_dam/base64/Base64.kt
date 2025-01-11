@@ -1,4 +1,4 @@
-package pt.ipt.dam.galeria_virtual.base64
+package pt.ipt.dam.trabalho_final_dam.base64
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

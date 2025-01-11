@@ -1,9 +1,10 @@
-package pt.ipt.dam.galeria_virtual
+package pt.ipt.dam.trabalho_final_dam
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
+
 
 class MainActivity : AppCompatActivity() {
 

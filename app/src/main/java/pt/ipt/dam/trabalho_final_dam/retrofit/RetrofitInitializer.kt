@@ -1,9 +1,9 @@
-package pt.ipt.dam.galeria_virtual.retrofit
+package pt.ipt.dam.trabalho_final_dam.retrofit
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import pt.ipt.dam.galeria_virtual.retrofit.service.FotoService
-import pt.ipt.dam.galeria_virtual.retrofit.service.UtilizadorService
+import pt.ipt.dam.trabalho_final_dam.retrofit.service.FotoService
+import pt.ipt.dam.trabalho_final_dam.retrofit.service.UtilizadorService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

@@ -1,4 +1,4 @@
-package pt.ipt.dam.galeria_virtual
+package pt.ipt.dam.trabalho_final_dam
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

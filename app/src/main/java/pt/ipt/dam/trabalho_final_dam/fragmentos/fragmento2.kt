@@ -1,4 +1,4 @@
-package pt.ipt.dam.galeria_virtual.fragmentos
+package pt.ipt.dam.trabalho_final_dam.fragmentos
 
 import android.os.Bundle
 import android.util.Log
@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import pt.ipt.dam.galeria_virtual.R
-import pt.ipt.dam.galeria_virtual.FotoListAdapter
-import pt.ipt.dam.galeria_virtual.model.Foto
-import pt.ipt.dam.galeria_virtual.retrofit.RetrofitInitializer
+import pt.ipt.dam.trabalho_final_dam.R
+import pt.ipt.dam.trabalho_final_dam.FotoListAdapter
+import pt.ipt.dam.trabalho_final_dam.model.Foto
+import pt.ipt.dam.trabalho_final_dam.retrofit.RetrofitInitializer
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

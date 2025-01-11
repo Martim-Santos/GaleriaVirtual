@@ -1,4 +1,4 @@
-package pt.ipt.dam.galeria_virtual.fragmentos
+package pt.ipt.dam.trabalho_final_dam.fragmentos
 
 import android.Manifest
 import android.content.ContentValues
@@ -19,10 +19,10 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import pt.ipt.dam.galeria_virtual.databinding.Fragmento1Binding
-import pt.ipt.dam.galeria_virtual.base64.Base64
-import pt.ipt.dam.galeria_virtual.model.Foto
-import pt.ipt.dam.galeria_virtual.retrofit.RetrofitInitializer
+import pt.ipt.dam.trabalho_final_dam.databinding.Fragmento1Binding
+import pt.ipt.dam.trabalho_final_dam.base64.Base64
+import pt.ipt.dam.trabalho_final_dam.model.Foto
+import pt.ipt.dam.trabalho_final_dam.retrofit.RetrofitInitializer
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
