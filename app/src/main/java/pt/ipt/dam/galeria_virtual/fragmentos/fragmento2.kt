@@ -1,4 +1,4 @@
-package pt.ipt.dam.trabalho_final_dam.fragmentos
+package pt.ipt.dam.galeria_virtual.fragmentos
 
 import android.os.Bundle
 import android.util.Log
@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import pt.ipt.dam.galeria_virtual.R
-import pt.ipt.dam.trabalho_final_dam.FotoListAdapter
-import pt.ipt.dam.trabalho_final_dam.model.Foto
-import pt.ipt.dam.trabalho_final_dam.retrofit.RetrofitInitializer
+import pt.ipt.dam.galeria_virtual.FotoListAdapter
+import pt.ipt.dam.galeria_virtual.model.Foto
+import pt.ipt.dam.galeria_virtual.retrofit.RetrofitInitializer
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,11 +21,7 @@ import retrofit2.Response
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Fragmento2.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class fragmento2 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null

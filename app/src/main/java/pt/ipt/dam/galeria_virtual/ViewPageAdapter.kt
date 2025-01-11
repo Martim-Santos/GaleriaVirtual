@@ -1,11 +1,11 @@
-package pt.ipt.dam.trabalho_final_dam
+package pt.ipt.dam.galeria_virtual
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import pt.ipt.dam.trabalho_final_dam.fragmentos.fragmento1
-import pt.ipt.dam.trabalho_final_dam.fragmentos.fragmento2
-import pt.ipt.dam.trabalho_final_dam.fragmentos.fragmento3
+import pt.ipt.dam.galeria_virtual.fragmentos.fragmento1
+import pt.ipt.dam.galeria_virtual.fragmentos.fragmento2
+import pt.ipt.dam.galeria_virtual.fragmentos.fragmento3
 
 class ViewPageAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
