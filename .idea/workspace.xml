@@ -25,13 +25,24 @@
           <theme>@style/Theme.Trabalho_Final_DAM</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/login.xml">
+        <config>
+          <theme>@style/Theme.Trabalho_Final_DAM</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/register.xml">
+        <config>
+          <theme>@style/Theme.Trabalho_Final_DAM</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
+
+
     <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Utilizador.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/RetrofitInitializer.kt" afterDir="false" />
@@ -44,7 +55,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento3.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-=======
+
     <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="base64">
       <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/base64/Base64.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorService.kt" afterDir="false" />
@@ -53,7 +64,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/FotoService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/FotoService.kt" afterDir="false" />
->>>>>>> Stashed changes
+
+
+    <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="página de login e register">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/APIresult.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Logins.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Login.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Register.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Register.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Utilizador.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Utilizador.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/RetrofitInitializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/RetrofitInitializer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorService.kt" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +86,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\digas\.android\avd\Pixel_6_Pro_API_34.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\marti\.android\avd\AR_Pixel_8a_API_34.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -110,50 +133,71 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-<<<<<<< Updated upstream
-=======
+
+
         <option value="Class" />
         <option value="Kotlin Data Class" />
->>>>>>> Stashed changes
+
         <option value="layoutResourceFile" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
-<<<<<<< Updated upstream
-        <option value="Class" />
-=======
+
         <option value="Kotlin Interface" />
->>>>>>> Stashed changes
+
+        <option value="Kotlin Interface" />
+        <option value="layoutResourceFile" />
+        <option value="Class" />
+        <option value="Kotlin Class" />
+
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Login-and-register" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Martim-Santos&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Martim-Santos/Trabalho_Final_DAM.git&quot;,
+    &quot;accountId&quot;: &quot;5d1cd1f6-ed55-4b7e-b4a2-956c286aef1c&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorSerivce.kt" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2pD3iZlL2c2Shj284kzsccNBvWC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/digas/OneDrive/Ambiente de Trabalho/Diogo/Escola/3 ano/Desenvolvimento App Moveis/API-main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/Documents/GitHub/API&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -161,10 +205,15 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;kotlin-gradle-user-dirs&quot;: [
-      &quot;C:\\Users\\digas\\.gradle&quot;
+      &quot;C:\\Users\\marti\\.gradle&quot;
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="pt.ipt.dam.trabalho_final_dam.model" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Trabalho_Final_DAM.app.main" />
@@ -242,6 +291,15 @@
       <option name="presentableId" value="Default" />
       <updated>1732286947039</updated>
     </task>
+    <task id="LOCAL-00001" summary="página de login e register">
+      <option name="closed" value="true" />
+      <created>1734711015298</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734711015298</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,7 +314,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+
     <MESSAGE value="base64" />
     <option name="LAST_COMMIT_MESSAGE" value="base64" />
+
   </component>
 </project>
