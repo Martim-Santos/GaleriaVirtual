@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import pt.ipt.dam.trabalho_final_dam.model.Utilizador
 import pt.ipt.dam.trabalho_final_dam.retrofit.RetrofitInitializer
-import okhttp3.Credentials
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,8 +31,19 @@ class Register : AppCompatActivity() {
             val email = emailField.text.toString()
             val password = passwordField.text.toString()
 
+
             if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
-                register(Utilizador(email, password, name))
+                //register(Utilizador(1email, password, name))
+                val loginData = hashMapOf<String,Any>(
+                    "email" to email,
+                    "password" to password,
+                    "nome" to name
+                )
+
+                val requestBody = hashMapOf<String, Any>(
+                    "login" to loginData
+                )
+                register(requestBody)
             } else {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             }
@@ -46,10 +57,10 @@ class Register : AppCompatActivity() {
 
     }
 
-    private fun register(user: Utilizador) {
+    private fun register(userMap: HashMap<String, Any>) {
         val service = RetrofitInitializer().utilizadorService()
 
-        service.addUser(user.Email,user.Password,user.Nome).enqueue(object : Callback<Utilizador> {
+        service.addUser(userMap).enqueue(object : Callback<Utilizador> {
             override fun onResponse(call: Call<Utilizador>, response: Response<Utilizador>) {
 
                 if (response.isSuccessful) {

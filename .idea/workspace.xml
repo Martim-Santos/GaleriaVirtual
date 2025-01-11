@@ -41,22 +41,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="CamaraX agora funciona no fragmento1">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Login.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Register.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/login.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/register.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+    <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="página de login e register">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/APIresult.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Logins.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/ViewPageAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/ViewPageAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Login.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Register.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/Register.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Utilizador.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/model/Utilizador.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/RetrofitInitializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/RetrofitInitializer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorSerivce.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,11 +117,23 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Login-and-register" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Martim-Santos&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Martim-Santos/Trabalho_Final_DAM.git&quot;,
+    &quot;accountId&quot;: &quot;5d1cd1f6-ed55-4b7e-b4a2-956c286aef1c&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/retrofit/service/UtilizadorSerivce.kt" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -143,28 +149,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.app.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/marti/Desktop/DAM2/APIautenticacao-main/app",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/Documents/GitHub/API&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   },
-  "keyToStringList": {
-    "kotlin-gradle-user-dirs": [
-      "C:\\Users\\marti\\.gradle"
+  &quot;keyToStringList&quot;: {
+    &quot;kotlin-gradle-user-dirs&quot;: [
+      &quot;C:\\Users\\marti\\.gradle&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="pt.ipt.dam.trabalho_final_dam.model" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Trabalho_Final_DAM.app.main" />
@@ -242,6 +253,15 @@
       <option name="presentableId" value="Default" />
       <updated>1732286947039</updated>
     </task>
+    <task id="LOCAL-00001" summary="página de login e register">
+      <option name="closed" value="true" />
+      <created>1734711015298</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734711015298</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,6 +277,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CamaraX agora funciona no fragmento1" />
-    <option name="LAST_COMMIT_MESSAGE" value="CamaraX agora funciona no fragmento1" />
+    <MESSAGE value="página de login e register" />
+    <option name="LAST_COMMIT_MESSAGE" value="página de login e register" />
   </component>
 </project>

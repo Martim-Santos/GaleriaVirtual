@@ -7,9 +7,9 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import pt.ipt.dam.trabalho_final_dam.model.Utilizador
 import pt.ipt.dam.trabalho_final_dam.retrofit.RetrofitInitializer
-import okhttp3.Credentials
+
+import pt.ipt.dam.trabalho_final_dam.model.Logins
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -45,21 +45,21 @@ class Login : AppCompatActivity() {
     }
 
     private fun login(email: String, password: String) {
-        val service = RetrofitInitializer().utilizadorService()
 
-        service.listUser().enqueue(object : Callback<List<Utilizador>> {
-            override fun onResponse(call: Call<List<Utilizador>>, response: Response<List<Utilizador>>) {
+        val call =  RetrofitInitializer().utilizadorService().listUser()
+        call.enqueue(object : Callback<Logins?>{
+            override fun onResponse(call: Call<Logins?>, response: Response<Logins?>) {
                 if (response.isSuccessful) {
-                    val users = response.body()
+                    val users = response.body()?.logins
                     val user = users?.find { it.Email == email && it.Password == password }
-
                     if (user != null) {
                         Toast.makeText(this@Login, "Login successful!", Toast.LENGTH_SHORT).show()
                         // Navigate to the main activity
                         val intent = Intent(this@Login, MainActivity::class.java)
                         startActivity(intent)
-
+                        finish()
                     } else {
+
                         Toast.makeText(this@Login, "Invalid email or password", Toast.LENGTH_SHORT).show()
                     }
                 } else {
@@ -67,9 +67,11 @@ class Login : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<List<Utilizador>>, t: Throwable) {
+            override fun onFailure(call: Call<Logins?>, t: Throwable) {
                 Toast.makeText(this@Login, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
+
+
         })
     }
 }
