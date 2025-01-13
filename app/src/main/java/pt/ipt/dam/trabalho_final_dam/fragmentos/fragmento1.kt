@@ -157,92 +157,91 @@ class fragmento1 : Fragment() {
 //            })
 //    }
 
-private fun takePhoto() {
-   val imageCapture = imageCapture ?: return
+    private fun takePhoto() {
+        val imageCapture = imageCapture ?: return
 
-    val name = SimpleDateFormat(FILENAME_FORMAT, Locale.UK)
-        .format(System.currentTimeMillis())
-    val contentValues = ContentValues().apply {
-        put(MediaStore.MediaColumns.DISPLAY_NAME, name)
-        put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+        val name = SimpleDateFormat(FILENAME_FORMAT, Locale.UK)
+            .format(System.currentTimeMillis())
+        val contentValues = ContentValues().apply {
+            put(MediaStore.MediaColumns.DISPLAY_NAME, name)
+            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+        }
+
+        val outputOptions = ImageCapture.OutputFileOptions
+            .Builder(
+                requireContext().contentResolver,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                contentValues
+            ).build()
+
+        imageCapture.takePicture(outputOptions, ContextCompat.getMainExecutor(requireContext()),
+            object : ImageCapture.OnImageSavedCallback {
+                override fun onError(exc: ImageCaptureException) {
+                    Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
+                }
+
+                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+                    val uri = output.savedUri
+                    if (uri != null) {
+                        Toast.makeText(requireContext(), "Foto tirada com sucesso.", Toast.LENGTH_SHORT).show()
+                        processImage(uri) // Process the image for API upload
+                    } else {
+                        Toast.makeText(requireContext(), "Não foi possível tirar a foto.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            })
     }
 
-    val outputOptions = ImageCapture.OutputFileOptions
-        .Builder(
-            requireContext().contentResolver,
-            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-            contentValues
-        ).build()
+    private fun processImage(uri: Uri) {
+        try {
+            // Load the image as a Bitmap
+            val inputStream = requireContext().contentResolver.openInputStream(uri)
+            val bitmap = BitmapFactory.decodeStream(inputStream)
 
-    imageCapture.takePicture(outputOptions, ContextCompat.getMainExecutor(requireContext()),
-        object : ImageCapture.OnImageSavedCallback {
-            override fun onError(exc: ImageCaptureException) {
-                Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
-            }
+            // Convert Bitmap to Base64
+            val base64String = base64.convertBitmapToBase64(bitmap)
 
-            override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-                val uri = output.savedUri
-                if (uri != null) {
-                    Toast.makeText(requireContext(), "Foto tirada com sucesso.", Toast.LENGTH_SHORT).show()
-                    processImage(uri) // Process the image for API upload
-                } else {
-                   Toast.makeText(requireContext(), "Não foi possível tirar a foto.", Toast.LENGTH_SHORT).show()
-                }
-            }
-        })
-}
-
-private fun processImage(uri: Uri) {
-    try {
-        // Load the image as a Bitmap
-        val inputStream = requireContext().contentResolver.openInputStream(uri)
-        val bitmap = BitmapFactory.decodeStream(inputStream)
-
-        // Convert Bitmap to Base64
-        val base64String = base64.convertBitmapToBase64(bitmap)
-
-        //Comprimir o base64
+            //Comprimir o base64
 //        val compressBase64Image = base64.compressBase64Image(base64String, 100)
 
-        // Send Base64 string to API
-        sendImageToApi(base64String)
+            // Send Base64 string to API
+            sendImageToApi(base64String)
 
-    } catch (e: Exception) {
-        Log.e(TAG, "Error processing image", e)
+        } catch (e: Exception) {
+            Log.e(TAG, "Error processing image", e)
+        }
     }
-}
 
     private fun sendImageToApi(base64String: String) {
-    val apiService = RetrofitInitializer().fotoService() // Adjust this to your API service class
+        val apiService = RetrofitInitializer().fotoService() // Adjust this to your API service class
 
         val fotoData = hashMapOf<String,Any>(
-        "email" to "email",
-        "foto" to base64String,
-        "descricao" to FILENAME_FORMAT
+            "email" to "email",
+            "foto" to base64String,
+            "descricao" to FILENAME_FORMAT
         )
 
         val requestBody = hashMapOf<String, Any>(
             "foto" to fotoData
         )
 
-
-    val call = apiService.addFoto(requestBody)
+        val call = apiService.addFoto(requestBody)
 //    val call = apiService.addFoto("email", "base64String", FILENAME_FORMAT) // Define this endpoint in your Retrofit service
-    call.enqueue(object : Callback<Foto> {
-        override fun onResponse(call: Call<Foto>, response: Response<Foto>) {
-            if (response.isSuccessful) {
-                Toast.makeText(requireContext(), "Imagem salvada com sucesso.", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(requireContext(), "Upload falhado: ${response.message()}", Toast.LENGTH_SHORT).show()
+        call.enqueue(object : Callback<Foto> {
+            override fun onResponse(call: Call<Foto>, response: Response<Foto>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(requireContext(), "Imagem salvada com sucesso.", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(requireContext(), "Upload falhado: ${response.message()}", Toast.LENGTH_SHORT).show()
+                }
             }
-        }
 
-        override fun onFailure(call: Call<Foto>, t: Throwable) {
-            Log.e(TAG, "Upload falhado: ${t.message}", t)
-        }
+            override fun onFailure(call: Call<Foto>, t: Throwable) {
+                Log.e(TAG, "Upload falhado: ${t.message}", t)
+            }
 
-    })
-}
+        })
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

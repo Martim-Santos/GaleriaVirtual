@@ -15,6 +15,11 @@ class Base64 {
         return Base64.encodeToString(byteArray, Base64.DEFAULT)
     }
 
+    fun convertBase64toBitmap(base64String: String): Bitmap {
+        val decodedString: ByteArray = android.util.Base64.decode(base64String, android.util.Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
+    }
+
     // Compress a Base64 image to fit within a size limit (in KB)
     fun compressBase64Image(base64Image: String, maxSizeInKB: Int): String {
         // Decode Base64 string to Bitmap

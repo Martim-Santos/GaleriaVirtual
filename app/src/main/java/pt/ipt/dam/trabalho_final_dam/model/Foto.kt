@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 
 data class Foto(
-    @SerializedName("Email") val Email: String?,
-    @SerializedName("Foto") val Foto: String?,
-    @SerializedName("Descricao") val Descricao: String?
+    @SerializedName("email") val Email: String?,
+    @SerializedName("foto") val Foto: String?,
+    @SerializedName("descricao") var Descricao: String?
 )

@@ -6,11 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import pt.ipt.dam.trabalho_final_dam.R
 import pt.ipt.dam.trabalho_final_dam.FotoListAdapter
 import pt.ipt.dam.trabalho_final_dam.model.Foto
+import pt.ipt.dam.trabalho_final_dam.model.Fotos
 import pt.ipt.dam.trabalho_final_dam.retrofit.RetrofitInitializer
 import retrofit2.Call
 import retrofit2.Callback
@@ -40,7 +43,19 @@ class fragmento2 : Fragment() {
     }
 
     private fun listFoto() {
-        processFotos(RetrofitInitializer().fotoService().listFoto())
+        val call = RetrofitInitializer().fotoService().listFoto()
+        call.enqueue(object : Callback<Fotos> {
+            override fun onResponse(call: Call<Fotos>, response: Response<Fotos>) {
+                if (response.isSuccessful) {
+                    val fotos = response.body()?.fotos ?: emptyList()
+                    configureList(fotos)
+                }
+            }
+
+            override fun onFailure(call: Call<Fotos>, t: Throwable) {
+                Toast.makeText(context, "Erro ao recarregar dados", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     override fun onCreateView(
@@ -49,6 +64,13 @@ class fragmento2 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragmento2, container, false)
+
+        val reloadButton: Button = rootView.findViewById(R.id.btn_reload)
+        reloadButton.setOnClickListener {
+            // Chame a função para recarregar os dados
+            listFoto()
+        }
+
         return rootView
     }
 

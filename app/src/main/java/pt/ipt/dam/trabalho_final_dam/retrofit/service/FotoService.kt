@@ -2,6 +2,7 @@ package pt.ipt.dam.trabalho_final_dam.retrofit.service
 
 import retrofit2.Call
 import pt.ipt.dam.trabalho_final_dam.model.Foto
+import pt.ipt.dam.trabalho_final_dam.model.Fotos
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.Field
@@ -12,7 +13,7 @@ import retrofit2.http.POST
 
 interface FotoService {
     @GET("https://api.sheety.co/44999724e36c8f60a4a0444b7f325fbd/projetoFinalDam/fotos")
-    fun listFoto(): Call<List<Foto>>
+    fun listFoto(): Call<Fotos>
 
     //@FormUrlEncoded
 //    fun addFoto(@Field("Email") Email: String?,
