@@ -2,6 +2,8 @@ package pt.ipt.dam.trabalho_final_dam.fragmentos
 
 import android.Manifest
 import android.content.ContentValues
+import android.content.Context
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.net.Uri
@@ -28,6 +30,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -41,6 +44,8 @@ class fragmento1 : Fragment() {
     private var imageCapture: ImageCapture? = null
 
     private lateinit var base64: Base64
+
+    private lateinit var sharedPreferences: SharedPreferences
 
     companion object {
         private const val TAG = "CameraXFragment"
@@ -69,6 +74,9 @@ class fragmento1 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         base64 = Base64()
+
+        sharedPreferences = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+
 
         if (allPermissionsGranted()) {
             startCamera()
@@ -215,10 +223,20 @@ class fragmento1 : Fragment() {
     private fun sendImageToApi(base64String: String) {
         val apiService = RetrofitInitializer().fotoService() // Adjust this to your API service class
 
+        // Obtenha o email do utilizador logado
+        val email = sharedPreferences.getString("email", null)
+
+        if (email == null) {
+            Toast.makeText(requireContext(), "Erro: Utilizador não logado.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+
         val fotoData = hashMapOf<String,Any>(
-            "email" to "email",
+            "email" to email,
             "foto" to base64String,
-            "descricao" to FILENAME_FORMAT
+            "descricao" to currentDate.toString()
         )
 
         val requestBody = hashMapOf<String, Any>(

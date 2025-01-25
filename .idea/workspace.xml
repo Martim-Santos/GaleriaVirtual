@@ -10,6 +10,11 @@
           <theme>@style/Theme.Trabalho_Final_DAM</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/foto_item.xml">
+        <config>
+          <theme>@style/Theme.Trabalho_Final_DAM</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragmento1.xml">
         <config>
           <theme>@style/Theme.Trabalho_Final_DAM</theme>
@@ -41,8 +46,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="deploymentTargetSelector">
+    <list default="true" id="268b57f8-d87f-4317-9210-4f761b94de4f" name="Changes" comment="Guardar fotos com o email do user autenticado">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-night/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/FotoListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/FotoListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/pt/ipt/dam/trabalho_final_dam/fragmentos/fragmento2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +64,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\marti\.android\avd\AR_Pixel_8a_API_34.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\digas\.android\avd\Pixel_8_Pro_API_34_1.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -142,13 +154,16 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2pD3iZlL2c2Shj284kzsccNBvWC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Android App.App.executor&quot;: &quot;Run&quot;,
     &quot;Android App.app.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
@@ -174,7 +189,7 @@
       <recent name="pt.ipt.dam.trabalho_final_dam.model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android App.App">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Trabalho_Final_DAM.app.main" />
       <option name="DEPLOY" value="true" />
@@ -276,6 +291,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="base64" />
     <MESSAGE value="deploymentTargetSelector" />
-    <option name="LAST_COMMIT_MESSAGE" value="deploymentTargetSelector" />
+    <MESSAGE value="Adição da galeria" />
+    <MESSAGE value="Guardar fotos com o email do user autenticado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Guardar fotos com o email do user autenticado" />
   </component>
 </project>

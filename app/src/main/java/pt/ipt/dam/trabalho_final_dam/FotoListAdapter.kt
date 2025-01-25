@@ -20,18 +20,12 @@ class FotoListAdapter(private val fotos: List<Foto>, private val context: Contex
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val foto = fotos[position]
 
-        // Atualizar a descrição com a data atual
-        foto.Descricao = getCurrentDate()
 
         holder?.let {
             it.bindView(foto)
         }
     }
-
-    private fun getCurrentDate(): String {
-        val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-        return sdf.format(Date())
-    }
+    
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.foto_item, parent, false)
@@ -60,8 +54,8 @@ class FotoListAdapter(private val fotos: List<Foto>, private val context: Contex
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
+            }
         }
-    }
 
-}
+    }
 }

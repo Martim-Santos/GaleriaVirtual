@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import pt.ipt.dam.trabalho_final_dam.R
@@ -43,57 +42,53 @@ class fragmento2 : Fragment() {
     }
 
     private fun listFoto() {
-        val call = RetrofitInitializer().fotoService().listFoto()
-        call.enqueue(object : Callback<Fotos> {
-            override fun onResponse(call: Call<Fotos>, response: Response<Fotos>) {
-                if (response.isSuccessful) {
-                    val fotos = response.body()?.fotos ?: emptyList()
-                    configureList(fotos)
-                }
-            }
-
-            override fun onFailure(call: Call<Fotos>, t: Throwable) {
-                Toast.makeText(context, "Erro ao recarregar dados", Toast.LENGTH_SHORT).show()
-            }
-        })
+        processFotos(RetrofitInitializer().fotoService().listFoto())
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragmento2, container, false)
 
+        // Definindo o botão de recarregar para chamar a função listFoto
         val reloadButton: Button = rootView.findViewById(R.id.btn_reload)
         reloadButton.setOnClickListener {
-            // Chame a função para recarregar os dados
-            listFoto()
+            listFoto()  // Recarregar as fotos
         }
 
         return rootView
     }
 
-    private fun processFotos(call: Call<List<Foto>>) {
-        call.enqueue(object : Callback<List<Foto>?> {
-            override fun onResponse(call: Call<List<Foto>?>?,
-                                    response: Response<List<Foto>?>?) {
+
+    private fun processFotos(call: Call<Fotos>) {
+        call.enqueue(object : Callback<Fotos?> {
+            override fun onResponse(call: Call<Fotos?>?, response: Response<Fotos?>?) {
+                // Se a resposta for bem-sucedida
                 response?.body()?.let {
-                    val fotos: List<Foto> = it
-                    configureList(fotos)
+                    val fotos: Fotos = it
+                    configureList(fotos)  // Passar o objeto Fotos para o método de configuração
                 }
             }
 
-            override fun onFailure(call: Call<List<Foto>?>?, t: Throwable?) {
+            override fun onFailure(call: Call<Fotos?>, t: Throwable) {
+                // Tratar falha na requisição
                 t?.message?.let { Log.e("onFailure error", it) }
             }
         })
     }
 
-    private fun configureList(fotos: List<Foto>) {
+    private fun configureList(fotos: Fotos) {
         val recyclerView: RecyclerView = rootView.findViewById(R.id.foto_list_recyclerview)
-        recyclerView.adapter = FotoListAdapter(fotos, requireContext())
-        val layoutManager = StaggeredGridLayoutManager( 2, StaggeredGridLayoutManager.VERTICAL)
+
+        // Verificando se há fotos, senão passando uma lista vazia
+        val listaFotos: List<Foto> = fotos.fotos ?: emptyList()
+
+        // Definindo o adaptador do RecyclerView
+        recyclerView.adapter = FotoListAdapter(listaFotos, requireContext())
+
+        // Definindo o layout manager (usei o StaggeredGridLayoutManager, mas pode ser outro)
+        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.layoutManager = layoutManager
     }
 

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Galeria Virtual</string>
     <string name="camara_click">tirar foto</string>
+    <string name="reload_btn">Recarregar</string>
 </resources>
