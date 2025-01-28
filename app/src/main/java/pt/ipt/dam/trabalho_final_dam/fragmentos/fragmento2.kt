@@ -1,5 +1,6 @@
 package pt.ipt.dam.trabalho_final_dam.fragmentos
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import pt.ipt.dam.trabalho_final_dam.R
@@ -63,20 +65,32 @@ class fragmento2 : Fragment() {
 
     private fun processFotos(call: Call<Fotos>) {
         call.enqueue(object : Callback<Fotos?> {
-            override fun onResponse(call: Call<Fotos?>?, response: Response<Fotos?>?) {
-                // Se a resposta for bem-sucedida
-                response?.body()?.let {
-                    val fotos: Fotos = it
-                    configureList(fotos)  // Passar o objeto Fotos para o método de configuração
+            override fun onResponse(call: Call<Fotos?>, response: Response<Fotos?>) {
+                response.body()?.let { fotos ->
+                    // Obter o email do utilizador autenticado
+                    val sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+                    val currentUserEmail = sharedPreferences.getString("email", null)
+
+                    if (currentUserEmail.isNullOrEmpty()) {
+                        Toast.makeText(requireContext(), "Utilizador não autenticado.", Toast.LENGTH_SHORT).show()
+                        return
+                    }
+
+                    // Filtrar as fotos pelo email do utilizador autenticado
+                    val userFotos = fotos.filter { it.Email == currentUserEmail }
+
+                    // Atualizar a lista no RecyclerView
+                    configureList(Fotos(userFotos))
+
                 }
             }
 
             override fun onFailure(call: Call<Fotos?>, t: Throwable) {
-                // Tratar falha na requisição
-                t?.message?.let { Log.e("onFailure error", it) }
+                t.message?.let { Log.e("onFailure error", it) }
             }
         })
     }
+
 
     private fun configureList(fotos: Fotos) {
         val recyclerView: RecyclerView = rootView.findViewById(R.id.foto_list_recyclerview)
