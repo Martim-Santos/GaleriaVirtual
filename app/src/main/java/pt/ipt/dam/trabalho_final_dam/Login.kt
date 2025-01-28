@@ -45,21 +45,26 @@ class Login : AppCompatActivity() {
     }
 
     private fun login(email: String, password: String) {
-
-        val call =  RetrofitInitializer().utilizadorService().listUser()
-        call.enqueue(object : Callback<Logins?>{
+        val call = RetrofitInitializer().utilizadorService().listUser()
+        call.enqueue(object : Callback<Logins?> {
             override fun onResponse(call: Call<Logins?>, response: Response<Logins?>) {
                 if (response.isSuccessful) {
                     val users = response.body()?.logins
                     val user = users?.find { it.Email == email && it.Password == password }
                     if (user != null) {
                         Toast.makeText(this@Login, "Login successful!", Toast.LENGTH_SHORT).show()
-                        // Navigate to the main activity
+
+                        // Salvar o e-mail do usuário no SharedPreferences
+                        val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
+                        editor.putString("email", email) // Salvar o e-mail
+                        editor.apply()
+
+                        // Navegar para a MainActivity
                         val intent = Intent(this@Login, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {
-
                         Toast.makeText(this@Login, "Invalid email or password", Toast.LENGTH_SHORT).show()
                     }
                 } else {
@@ -70,8 +75,7 @@ class Login : AppCompatActivity() {
             override fun onFailure(call: Call<Logins?>, t: Throwable) {
                 Toast.makeText(this@Login, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
-
-
         })
     }
+
 }
