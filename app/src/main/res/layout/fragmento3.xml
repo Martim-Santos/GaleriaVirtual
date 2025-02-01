@@ -7,10 +7,62 @@
     tools:context=".fragmentos.fragmento3">
 
     <TextView
+        android:id="@+id/textView2"
+        android:layout_width="303dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="302dp"
+        android:layout_marginEnd="45dp"
+        android:text="Diogo Moinhá Nº23040"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Fragmento 3"
-        android:textSize="32dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="361dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="327dp"
+        android:text="Martim Santos Nº24235"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="97dp"
+        android:text="Galeria Virtual"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="306dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="122dp"
+        android:layout_marginEnd="48dp"
+        android:text="Desenvolimento de Aplicações moveis"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="231dp"
+        android:layout_marginEnd="134dp"
+        android:text="2024/25"
+        android:textSize="34sp" />
 
 </RelativeLayout>

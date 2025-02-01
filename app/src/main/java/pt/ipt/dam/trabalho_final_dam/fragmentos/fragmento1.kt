@@ -97,6 +97,7 @@ class fragmento1 : Fragment() {
         ) == PackageManager.PERMISSION_GRANTED
     }
 
+    //inicia a camera
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
 
@@ -131,40 +132,8 @@ class fragmento1 : Fragment() {
         }, ContextCompat.getMainExecutor(requireContext()))
     }
 
-//    private fun takePhoto() {
-//        val imageCapture = imageCapture ?: return
-//
-//        val name = SimpleDateFormat(FILENAME_FORMAT, Locale.UK)
-//            .format(System.currentTimeMillis())
-//        val contentValues = ContentValues().apply {
-//            put(MediaStore.MediaColumns.DISPLAY_NAME, name)
-//            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
-//            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
-//                put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/TrabalhoFinalDAM-Images")
-//            }
-//        }
-//
-//        val outputOptions = ImageCapture.OutputFileOptions
-//            .Builder(
-//                requireContext().contentResolver,
-//                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-//                contentValues
-//            ).build()
-//
-//        imageCapture.takePicture(outputOptions, ContextCompat.getMainExecutor(requireContext()),
-//            object : ImageCapture.OnImageSavedCallback {
-//                override fun onError(exc: ImageCaptureException) {
-//                    Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
-//                }
-//
-//                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-//                    val msg = "Photo capture succeeded: ${output.savedUri}"
-//                    Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
-//                    Log.d(TAG, msg)
-//                }
-//            })
-//    }
 
+    // Tira a fotografia
     private fun takePhoto() {
         val imageCapture = imageCapture ?: return
 
@@ -200,19 +169,15 @@ class fragmento1 : Fragment() {
             })
     }
 
+    // Recebe a imagem e turna o bitmap em base64
     private fun processImage(uri: Uri) {
         try {
-            // Load the image as a Bitmap
             val inputStream = requireContext().contentResolver.openInputStream(uri)
             val bitmap = BitmapFactory.decodeStream(inputStream)
 
-            // Convert Bitmap to Base64
             val base64String = base64.convertBitmapToBase64(bitmap)
 
-            //Comprimir o base64
-//        val compressBase64Image = base64.compressBase64Image(base64String, 100)
 
-            // Send Base64 string to API
             sendImageToApi(base64String)
 
         } catch (e: Exception) {
@@ -220,11 +185,11 @@ class fragmento1 : Fragment() {
         }
     }
 
+    // manda a base64 da imagem para o API
     private fun sendImageToApi(base64String: String) {
-        val apiService = RetrofitInitializer().fotoService() // Adjust this to your API service class
+        val apiService = RetrofitInitializer().fotoService()
 
-        // Obtenha o email do utilizador logado
-        val email = sharedPreferences.getString("email", null)
+        val email = sharedPreferences.getString("email", null) // Vai buscar o email do utilizador autenticado.
 
         if (email == null) {
             Toast.makeText(requireContext(), "Erro: Utilizador não logado.", Toast.LENGTH_SHORT).show()
@@ -236,7 +201,7 @@ class fragmento1 : Fragment() {
         val fotoData = hashMapOf<String,Any>(
             "email" to email,
             "foto" to base64String,
-            "descricao" to currentDate.toString()
+            "descricao" to currentDate.toString() // salva a descrição da foto como a data em que foi tirada.
         )
 
         val requestBody = hashMapOf<String, Any>(
@@ -244,7 +209,6 @@ class fragmento1 : Fragment() {
         )
 
         val call = apiService.addFoto(requestBody)
-//    val call = apiService.addFoto("email", "base64String", FILENAME_FORMAT) // Define this endpoint in your Retrofit service
         call.enqueue(object : Callback<Foto> {
             override fun onResponse(call: Call<Foto>, response: Response<Foto>) {
                 if (response.isSuccessful) {

@@ -45,7 +45,7 @@ class Register : AppCompatActivity() {
                 )
                 register(requestBody)
             } else {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Por favor preencha todos os espaços.", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -64,18 +64,18 @@ class Register : AppCompatActivity() {
             override fun onResponse(call: Call<Utilizador>, response: Response<Utilizador>) {
 
                 if (response.isSuccessful) {
-                    Toast.makeText(this@Register, "Registration successful!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Register, "Registo com sucesso!", Toast.LENGTH_SHORT).show()
                     // Navigate back to LoginActivity
                     val intent = Intent(this@Register, Login::class.java)
                     startActivity(intent)
                     finish()
                 } else {
-                    Toast.makeText(this@Register, "Error: ${response.errorBody()?.string()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Register, "Erro: ${response.errorBody()?.string()}", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<Utilizador>, t: Throwable) {
-                Toast.makeText(this@Register, "Network error: ${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@Register, "Erro de Network: ${t.message}", Toast.LENGTH_SHORT).show()
 
             }
         })

@@ -95,13 +95,13 @@ class fragmento2 : Fragment() {
     private fun configureList(fotos: Fotos) {
         val recyclerView: RecyclerView = rootView.findViewById(R.id.foto_list_recyclerview)
 
-        // Verificando se há fotos, senão passando uma lista vazia
+        // Verificar se há fotos, senão passa uma lista vazia
         val listaFotos: List<Foto> = fotos.fotos ?: emptyList()
 
-        // Definindo o adaptador do RecyclerView
+        // Define o adaptador do RecyclerView
         recyclerView.adapter = FotoListAdapter(listaFotos, requireContext())
 
-        // Definindo o layout manager (usei o StaggeredGridLayoutManager, mas pode ser outro)
+        // Define o layout manager (usa o StaggeredGridLayoutManager, mas pode ser outro)
         val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.layoutManager = layoutManager
     }

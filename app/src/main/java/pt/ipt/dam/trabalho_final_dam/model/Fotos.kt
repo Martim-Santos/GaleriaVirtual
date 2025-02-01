@@ -6,7 +6,7 @@ data class Fotos (
     @SerializedName("fotos") val fotos: List<Foto>?
 ) {
     fun filter(predicate: (Foto) -> Boolean): List<Foto> {
-        return fotos?.filter(predicate) ?: emptyList()  // Isso lida com o caso de null
+        return fotos?.filter(predicate) ?: emptyList()
     }
 
 }
