@@ -75,7 +75,7 @@ class fragmento1 : Fragment() {
 
         base64 = Base64()
 
-        sharedPreferences = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
 
 
         if (allPermissionsGranted()) {
