@@ -55,6 +55,11 @@ class Login : AppCompatActivity() {
                     if (user != null) {
                         Toast.makeText(this@Login, "Autenticação com sucesso!", Toast.LENGTH_SHORT).show()
 
+                        // Salvar o e-mail do usuário no SharedPreferences
+                        val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
+                        editor.putString("email", email) // Salvar o e-mail
+                        editor.apply()
 
                         // Navegar para a MainActivity
                         val intent = Intent(this@Login, MainActivity::class.java)

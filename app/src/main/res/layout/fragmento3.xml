@@ -65,4 +65,14 @@
         android:text="2024/25"
         android:textSize="34sp" />
 
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="33dp"
+        android:text="logout" />
+
 </RelativeLayout>
